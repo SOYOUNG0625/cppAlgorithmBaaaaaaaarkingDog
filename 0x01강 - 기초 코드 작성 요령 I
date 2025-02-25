@@ -68,3 +68,44 @@ int main()
 }
 
 
+// Integer Overflow
+#include <vector>
+#include <algorithm>
+using namespace std;
+#include <iostream>
+#include <iterator>
+
+int func1() {
+    for (int s = 0; s < 128;s++) {
+        cout << "hi";
+    }
+    return 0;
+}
+int func2() {
+    int r = 1;
+    for (int i = 1; i <= 50; i++) {
+        r = r * i % 61;
+    }
+    return r;
+}
+int func3() {
+    long long  a = 1;
+    int mod = 1000000007;
+    for (int i = 0; i < 10; i++)
+        a = 10 * a % mod;
+    return a;
+}
+
+int main()
+{
+    func1();
+    cout << endl;
+    cout << func2() << endl;
+    cout << func3() << endl;
+   
+    return 0;
+}
+
+
+
+
